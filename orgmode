@@ -1,0 +1,18 @@
+#!/bin/bash
+while [ ! $# -eq 0 ]
+do
+	case "$1" in
+	     --school | -s)
+	     	      emacs ~/Agenda/school.org
+		      exit
+		      ;;
+	     --work | -w)
+	     	      emacs ~/Agenda/work.org
+		      exit
+		      ;;
+	esac
+	shift
+done
+if [ $# -eq 0 ]; then
+   emacs ~/Agenda/agenda.org
+fi
