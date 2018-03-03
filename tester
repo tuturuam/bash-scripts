@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ ! -d ~/Speedtests ]; then
+    mkdir ~/Speedtests
+    touch ~/tests.json
+fi
+sed -i 's/]/    ,/' ~/Speedtests/tests.json
+speedtest --json | tee -a ~/Speedtests/tests.json
+sed -i -e "\$a]" ~/Speedtests/tests.json
+
